@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { fetchData } from '../../Services/ApiService'; // Update the path accordingly
+import React from 'react';
+import { usePokemonContext } from '../../Context/PokemonContext'; // Update the path accordingly
 import { Pokemon } from '../../Pokemons/pokemon';
 
 interface PokemonListProps {
@@ -7,16 +7,34 @@ interface PokemonListProps {
 }
 
 const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
-    return (
+  const { pokemonData, setPokemonData } = usePokemonContext(); // Access context values
+
+  const handlePokemonClick = (selectedPokemon: Pokemon) => {
+    // When a Pokemon is clicked, update the context data
+    setPokemonData(selectedPokemon);
+  };
+
+  return (
+    <div className="PokemonList">
+      <h2>Pokémon List</h2>
       <ul>
-        {pokemons.map(pokemon => (
-          <li key={pokemon.name}>
-            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png`} alt={pokemon.name} />
+        {pokemons.map((pokemon) => (
+          <li key={pokemon.id} onClick={() => handlePokemonClick(pokemon)}>
             {pokemon.name}
           </li>
         ))}
       </ul>
-    );
-  };
-  
-  export default PokemonList;
+      {pokemonData && (
+        <div>
+          <h2>Selected Pokemon</h2>
+          <p>ID: {pokemonData.id}</p>
+          <p>Name: {pokemonData.name}</p>
+          <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`} alt={pokemonData.name} />
+
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default PokemonList;

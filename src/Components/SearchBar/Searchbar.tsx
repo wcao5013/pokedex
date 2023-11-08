@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Pokemon } from '../../Pokemons/pokemon';
+import { usePokemonContext } from '../../Context/PokemonContext'
 
 
 
 const SearchBar: React.FC = () => {
   
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [pokemonData, setPokemonData] = useState<Pokemon | null>(null);
+  const { setPokemonData } = usePokemonContext()
+  
 
   const fetchPokemonData = async () => {
     try {
@@ -42,7 +44,7 @@ const SearchBar: React.FC = () => {
       />
       <button onClick={fetchPokemonData}>Search</button>
 
-      {pokemonData ? (
+      {/* {pokemonData ? (
         <div>
           <h2>Pokemon Info</h2>
           <p>ID: {pokemonData.id}</p>
@@ -51,7 +53,7 @@ const SearchBar: React.FC = () => {
         </div>
       ) : (
         <p>No Pokemon found with the given ID or Name.</p>
-      )}
+      )} */}
     </div>
   );
 };

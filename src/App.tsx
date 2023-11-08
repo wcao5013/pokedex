@@ -3,6 +3,7 @@ import { fetchData } from './Services/ApiService'; // Update the path accordingl
 import PokemonList from './Components/PokemonList/PokemonList';
 import { Pokemon } from './Pokemons/pokemon';
 import SearchBar from './Components/SearchBar/Searchbar';
+import { PokemonProvider } from './Context/PokemonContext'
 
 const App: React.FC = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
@@ -21,11 +22,13 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Pokémon List</h1>
-      <SearchBar />
-      <PokemonList pokemons={pokemons} />
-    </div>
+    <PokemonProvider>
+      <div className="App">
+        <h1>Pokémon List</h1>
+        <SearchBar />
+        <PokemonList pokemons={pokemons} />
+      </div>
+    </PokemonProvider>
   );
 };
 
