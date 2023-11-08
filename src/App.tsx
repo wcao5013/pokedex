@@ -1,28 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './SCSS/App.scss';
-import SearchBar from './Components/Searchbar';
+import React, { useEffect, useState } from 'react';
+import { fetchData } from './Services/ApiService'; // Update the path accordingly
+import PokemonList from './Components/PokemonList/PokemonList';
+import { Pokemon } from './Pokemons/pokemon';
+import SearchBar from './Components/SearchBar/Searchbar';
 
-function App() {
+const App: React.FC = () => {
+  const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+
+  useEffect(() => {
+    const fetchDataAsync = async () => {
+      try {
+        const data = await fetchData();
+        setPokemons(data.results);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchDataAsync();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <SearchBar />
-      </header>
+      <h1>Pokémon List</h1>
+      <SearchBar />
+      <PokemonList pokemons={pokemons} />
     </div>
   );
-}
+};
 
 export default App;
