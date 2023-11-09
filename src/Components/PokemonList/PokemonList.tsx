@@ -31,9 +31,13 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
           <p>Name: {pokemonData.name}</p>
           <img
             loading='lazy'
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`}
+            src={`https://img.pokemondb.net/artwork/large/${pokemonData.name}.jpg`}
             alt={pokemonData.name}
           />
+          {pokemonData.types && (
+            <p key={pokemonData.id}>Types: {pokemonData.types.map((type) => type.type.name).join(', ')}</p>
+          )}
+          
           <button onClick={handleResetClick}>Reset</button>
         </div>
       ) : (
