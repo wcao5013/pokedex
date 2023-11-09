@@ -2,6 +2,8 @@ import React from 'react';
 import { usePokemonContext } from '../../Context/PokemonContext'; // Update the path accordingly
 import { Pokemon } from '../../Pokemons/pokemon';
 
+
+
 interface PokemonListProps {
   pokemons: Pokemon[];
 }
@@ -28,6 +30,7 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
           <p>ID: {pokemonData.id}</p>
           <p>Name: {pokemonData.name}</p>
           <img
+            loading='lazy'
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`}
             alt={pokemonData.name}
           />
@@ -42,6 +45,7 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
             {pokemons.map((pokemon) => (
               <li key={pokemon.id} onClick={() => handlePokemonClick(pokemon)}>
                 <img
+                  loading='lazy'
                   src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`}
                   alt={pokemon.name}
                   width={200}
