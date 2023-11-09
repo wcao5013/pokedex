@@ -43,7 +43,7 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
       ) : (
         // Display list of Pokemon if no Pokemon is selected
         <div>
-          <h2>Pokémon List</h2>
+          {/* <h2>Pokémon List</h2> */}
           
           <ul>
             {pokemons.map((pokemon) => (
