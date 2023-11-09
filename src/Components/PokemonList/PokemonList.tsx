@@ -37,7 +37,7 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
           {pokemonData.types && (
             <p key={pokemonData.id}>Types: {pokemonData.types.map((type) => type.type.name).join(', ')}</p>
           )}
-          
+          <p>Weight: {pokemonData.weight} kg</p>
           <button onClick={handleResetClick}>Reset</button>
         </div>
       ) : (
