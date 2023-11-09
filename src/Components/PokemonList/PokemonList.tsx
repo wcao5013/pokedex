@@ -41,13 +41,13 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
           <ul>
             {pokemons.map((pokemon) => (
               <li key={pokemon.id} onClick={() => handlePokemonClick(pokemon)}>
-                {pokemon.name}
                 <img
                   src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`}
                   alt={pokemon.name}
                   width={200}
                   height={200}
                 />
+                {pokemon.name}
               </li>
             ))}
           </ul>
