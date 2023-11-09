@@ -34,6 +34,12 @@ const SearchBar: React.FC = () => {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      fetchPokemonData();
+    }
+  };
+
   return (
     <div>
       <input
@@ -41,6 +47,7 @@ const SearchBar: React.FC = () => {
         placeholder="Enter Pokemon ID or Name"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
+        onKeyDown={handleKeyDown} // Call handleKeyDown function on Enter key press
       />
       <button onClick={fetchPokemonData}>Search</button>
 
