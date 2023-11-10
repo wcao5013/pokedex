@@ -24,8 +24,8 @@ const App: React.FC = () => {
   return (
     <PokemonProvider>
       <div className="App">
-        <h1>Pokémon List</h1>
         <SearchBar />
+        <h1>Pokémon List</h1>
         <PokemonList pokemons={pokemons} />
       </div>
     </PokemonProvider>

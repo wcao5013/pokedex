@@ -16,8 +16,17 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
   
   const handlePokemonClick = (selectedPokemon: Pokemon) => {
     // When a Pokemon is clicked, update the context data
-    const searchTerm = selectedPokemon.name; // Set the search term dynamically or based on user input
-    fetchPokemonData(searchTerm);
+    try {
+      // When a Pokemon is clicked, update the context data
+      const searchTerm = selectedPokemon.name; // Set the search term dynamically or based on user input
+      // Assume fetchPokemonData is an asynchronous function that may throw errors
+      fetchPokemonData(searchTerm);
+      // If the fetchPokemonData function completes without errors, you can add any additional logic here
+    } catch (error) {
+      // Handle errors here
+      console.error("Error fetching Pokemon data:", error);
+      // You can add further error handling logic or display an error message to the user
+    }
   };
 
   const handleResetClick = () => {
@@ -26,7 +35,8 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
     console.log('This is just handleResekClick', pokemonData)
   };
 
- console.log("Updated Pokemon Data", pokemonData)
+  console.log("Updated Pokemon Data", pokemonData)
+
 
  
 
@@ -44,7 +54,12 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
             alt={pokemonData.name}
           />
           {pokemonData.types && (
-            <p>Types: {pokemonData.types.map((type) => type.type.name).join(', ')}</p>
+            <div>
+              <p >Types: </p>
+              {pokemonData.types.map((type, index) => (
+                <div key={index}>{type.type.name}</div>
+              ))}
+            </div>
           )}
           <p>Weight: {pokemonData.weight} kg</p>
           <button onClick={handleResetClick}>Reset</button>
@@ -53,10 +68,9 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
         // Display list of Pokemon if no Pokemon is selected
         <div>
           {/* <h2>Pokémon List</h2> */}
-          
           <ul>
-            {pokemons.map((pokemon) => (
-              <li key={pokemon.id} onClick={() => handlePokemonClick(pokemon)}>
+            {pokemons.map((pokemon, index) => (
+              <li key={pokemon.id || index} onClick={() => handlePokemonClick(pokemon)}>
                 <img
                   loading='lazy'
                   src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`}
@@ -64,9 +78,8 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
                   width={200}
                   height={200}
                 />
-                {pokemon.name}
+                <p>{pokemon.name}</p>
               </li>
-
             ))}
           </ul>
         </div>
