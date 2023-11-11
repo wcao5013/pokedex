@@ -1,0 +1,73 @@
+/* ***************** Mobile view ******************* */
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  /* Change view depending on size of screen */
+  @media only screen and (max-width: 600px) {
+  
+    // input {
+    //   display: flex;
+    //   justify-content: flex-end;
+    //   align-items: left;
+    //   margin-top: 1rem;
+    // }
+    // button {
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: flex-start;
+  
+    // }
+    div {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      background-color: yellow;
+      input {
+        background-color: blueviolet;
+      }
+      button {
+        background-color: white;
+        display: inline-flex;
+        margin-left: 8rem;
+        border-radius: .7rem;
+        border-color: rgb(232, 232, 232);
+        border-width: .3rem;
+        height: 2rem;
+        width: 5rem;
+        padding-top: .3rem;
+        padding-left: .9rem;
+        font-weight: bold;
+        color: blueviolet;
+        
+        
+      }
+    }
+
+    
+  }
+  @media only screen and (min-width: 600px) {
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    body {
+      background-color: 'blue';
+      color: 'red';
+    }
+  }
+  
+  @media only screen and (min-width: 992px) {
+    body {
+      background-color: 'blue';
+      color: 'red';
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    
+  }
+  

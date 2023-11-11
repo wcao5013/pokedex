@@ -4,6 +4,7 @@ import PokemonList from './Components/PokemonList/PokemonList';
 import { Pokemon } from './Pokemons/pokemon';
 import SearchBar from './Components/SearchBar/Searchbar';
 import { PokemonProvider } from './Context/PokemonContext'
+import './SCSS/App.scss'
 
 const App: React.FC = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);

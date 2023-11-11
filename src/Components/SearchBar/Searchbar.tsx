@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Pokemon } from '../../Pokemons/pokemon';
 import { usePokemonContext } from '../../Context/PokemonContext'
+import '../../SCSS/searchBar.module.scss'
 
 
 
