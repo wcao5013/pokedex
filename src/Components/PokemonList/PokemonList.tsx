@@ -154,8 +154,9 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons: initialPokemons }) 
           <p>Name: {pokemonData.name}</p>
           <img
             loading='lazy'
-            src={`https://img.pokemondb.net/artwork/large/${pokemonData.name}.jpg`}
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemonData.id}.png`}
             alt={pokemonData.name}
+            style={{ background: 'none'}}
           />
           {pokemonData.types && (
             <div>
@@ -178,7 +179,7 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons: initialPokemons }) 
                 
                 <img
                   loading='lazy'
-                  src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`}
+                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`}
                   alt={pokemon.name}
                   width={200}
                   height={200}
