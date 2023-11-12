@@ -51,6 +51,12 @@ $secondaryColor: 'black';
   .App {
     h1 {
       background-color: yellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: -webkit-linear-gradient(144deg,#EF4765, #FF9A5A);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
