@@ -13,6 +13,12 @@ const SearchBar: React.FC = () => {
 
   const fetchPokemonData = async () => {
     try {
+      if (!searchTerm) {
+        // Display a message or perform an action to indicate that a Pokemon needs to be entered
+        alert('Please enter a Pokemon to find');
+        return;
+      }
+
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}`);
       const data = await response.json();
       setPokemonData({
