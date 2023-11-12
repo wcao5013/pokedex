@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Pokemon } from '../../Pokemons/pokemon';
 import { usePokemonContext } from '../../Context/PokemonContext'
-import '../../SCSS/searchBar.module.scss'
+import styles from '../../SCSS/searchBar.module.scss'
 
 
 
@@ -42,7 +42,7 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={styles.searchBar}>
       <input
         type="text"
         placeholder="Enter Pokemon ID or Name"
@@ -50,7 +50,7 @@ const SearchBar: React.FC = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyDown={handleKeyDown} // Call handleKeyDown function on Enter key press
       />
-      <button onClick={fetchPokemonData}>Search</button>
+      <button onClick={fetchPokemonData} >Search</button>
 
       {/* {pokemonData ? (
         <div>

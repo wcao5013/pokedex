@@ -1,0 +1,17 @@
+/* ***************** Mobile view ******************* */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+/* Change view depending on size of screen */
+@media only screen and (max-width: 600px) {
+  .App h1 {
+    background-color: yellow;
+  }
+}
+@media only screen and (min-width: 992px) {
+  body {
+    background-color: "red";
+  }
+}/*# sourceMappingURL=App.module.css.map */
