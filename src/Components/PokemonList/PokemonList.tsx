@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { usePokemonContext } from '../../Context/PokemonContext'; // Update the path accordingly
 import { Pokemon } from '../../Pokemons/pokemon';
+import styles from '../../SCSS/PokemonList.module.scss'
 
 
 
@@ -145,19 +146,21 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons: initialPokemons }) 
   })}
 
   return (
-    <div className="PokemonList" style={{ background: getBackgroundColor(pokemonData?.types || []) }}>
+    <div  style={{ background: getBackgroundColor(pokemonData?.types || []) }}>
       {pokemonData ? (
         // Display selected Pokemon details if a Pokemon is selected
-        <div >
+        <div className={styles.PokemonList}>
           <h2>Selected Pokemon</h2>
-          <p>ID: {pokemonData.id}</p>
-          <p>Name: {pokemonData.name}</p>
+          
+          <p className={styles.name}>Name: {pokemonData.name}</p>
           <img
             loading='lazy'
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemonData.id}.png`}
             alt={pokemonData.name}
             style={{ background: 'none'}}
+            className={styles.image}
           />
+          <p>ID: {pokemonData.id}</p>
           {pokemonData.types && (
             <div>
               <p >Types: </p>
@@ -171,7 +174,7 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons: initialPokemons }) 
         </div>
       ) : (
         // Display list of Pokemon if no Pokemon is selected
-        <div>
+        <div className={styles.PokemonResults}>
           {/* <h2>Pokémon List</h2> */}
           <ul>
             {pokemons.map((pokemon, index,) => (

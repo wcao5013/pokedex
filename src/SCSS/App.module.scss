@@ -57,6 +57,9 @@ $secondaryColor: 'black';
       background: -webkit-linear-gradient(144deg,#EF4765, #FF9A5A);
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: .9 0.3125 1.25 rgb(216, 178, 118);
+      letter-spacing: -0.05em;
+      
     }
   }
 }

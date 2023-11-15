@@ -1,0 +1,212 @@
+/* ***************** Mobile view ******************* */
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  /* Change view depending on size of screen */
+  @media only screen and (max-width: 600px) {
+    .PokemonList {
+        h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+        }
+        .image {
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            width: 14.5rem;
+            height: 14.5rem;
+            margin-left: 4.5rem;
+        }
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            margin-bottom: .5rem;
+            margin-top: .5rem;
+        }
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        button {
+            border-color: white;
+            background-color: transparent;
+            color: white;
+            border-radius: 1rem;
+            width: 3rem;
+            height: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10rem;
+        }
+        button:hover {
+            background-color: white;
+            border-color: transparent;
+        }
+    }
+
+    // This is just for the populated list
+    .PokemonResults {
+        
+        ul {
+            list-style-type: none;
+            margin: -.55rem;
+
+            li {
+                display: grid;
+                grid-template-columns: 1fr;
+                place-items: center;
+                margin-right: 2rem;
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+                width: 18.5rem;
+                height: 13.5rem;
+                border-radius: 7rem;
+                border-style: solid;
+                border-width: .5rem;
+                border-color: rgb(253, 133, 90);
+
+                // justify-content: center;
+                // align-items: center;
+                p {
+                    padding-top: 1rem;
+                    font-weight: bold;
+                    color: gray;
+                }
+                
+            }
+
+            li:hover {
+                width: 26.5rem;
+                height: 22.5rem;
+                animation: ease-in 2s linear 0 1.5 normal forwards;
+                
+            }
+          }
+    }
+  }
+  @media only screen and (min-width: 600px) {
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .PokemonList {
+        h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+        }
+        .image {
+            display: flex;
+            justify-content: flex-start;
+            width: 25.5rem;
+            height: 25.5rem;
+            
+        }
+
+        p {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            margin-bottom: .5rem;
+            margin-top: .5rem;
+        }
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        button {
+            border-color: white;
+            background-color: transparent;
+            color: white;
+            border-radius: 1rem;
+            width: 3rem;
+            height: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 24rem;
+        }
+        button:hover {
+            background-color: white;
+            border-color: transparent;
+        }
+    }
+    
+    .PokemonResults {
+        
+        ul {
+
+            list-style: none;
+
+             li {
+
+                display: inline-block;
+                grid-template-columns: 3fr;
+                place-items: center;
+                margin: 1rem;
+                border-radius: 1rem;
+
+                p {
+                    display: flex;
+                    justify-content: center;
+                    color: white;
+                    font-weight: bold;
+                }
+             }
+
+             
+        }
+    }
+
+  }
+  
+  @media only screen and (min-width: 992px) {
+    
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    
+  }
+  
