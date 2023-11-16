@@ -114,43 +114,53 @@
   }
   
   @media only screen and (min-width: 768px) {
+    
+    // .PokemonList1 {
+    //     height: 60rem;
+    // }
     .PokemonList {
-        h2 {
+        // width: 30rem;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
+
+        h2 {
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
             color: white;
         }
         .name {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
             font-weight: bold;
             color: white;
         }
         .image {
-            display: flex;
-            justify-content: flex-start;
+            // display: flex;
+            // justify-content: flex-start;
             width: 25.5rem;
             height: 25.5rem;
+            float: left;
+           
             
         }
 
         p {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
             font-weight: bold;
             color: white;
-            margin-bottom: .5rem;
-            margin-top: .5rem;
+
+            float: left;
         }
         
         div {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            align-items: center;
+            align-items: end;
             font-weight: bold;
             color: white;
         }
@@ -164,9 +174,9 @@
             height: 2rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-left: 24rem;
+            justify-content: flex-end;
+            align-items: end;
+        
         }
         button:hover {
             background-color: white;

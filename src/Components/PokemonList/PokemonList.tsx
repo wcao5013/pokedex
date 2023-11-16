@@ -146,7 +146,7 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons: initialPokemons }) 
   })}
 
   return (
-    <div  style={{ background: getBackgroundColor(pokemonData?.types || []) }}>
+    <div  className={styles.PokemoneList1} style={{ background: getBackgroundColor(pokemonData?.types || []) }}>
       {pokemonData ? (
         // Display selected Pokemon details if a Pokemon is selected
         <div className={styles.PokemonList}>
